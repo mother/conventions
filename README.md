@@ -2080,37 +2080,31 @@ function combine(a, b) {
 ```
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid positional markers
-They usually just add noise. Let the functions and variable names along with the
+### Use positional markers sparingly
+They usually add noise and you can let the functions and variable names along with the
 proper indentation and formatting give the visual structure to your code.
 
-**Bad:**
-```javascript
-////////////////////////////////////////////////////////////////////////////////
-// Scope Model Instantiation
-////////////////////////////////////////////////////////////////////////////////
-$scope.model = {
-  menu: 'foo',
-  nav: 'bar'
-};
-
-////////////////////////////////////////////////////////////////////////////////
-// Action setup
-////////////////////////////////////////////////////////////////////////////////
-const actions = function() {
-  // ...
-};
-```
+When you have a very large file that doesn't make sense to modularize, use logical
+positional comments to breakdown large sections.
 
 **Good:**
 ```javascript
-$scope.model = {
-  menu: 'foo',
-  nav: 'bar'
-};
+// =======================================================
+// Schema Declaration
+// =======================================================
 
-const actions = function() {
-  // ...
-};
+...lots of code
+
+// =======================================================
+// Schema Methods
+// =======================================================
+
+...lots of code
+
+// =======================================================
+// Schema Hooks
+// =======================================================
+
+...lots of code
 ```
 **[⬆ back to top](#table-of-contents)**
